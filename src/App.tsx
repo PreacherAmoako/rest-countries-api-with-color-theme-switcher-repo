@@ -1,33 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { getAllCountries } from './services'
+import { Country } from './country'
+import TopNav from './components/TopNav'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [countries, setCountries] = useState<Country[]>([])
+
+  const loadCountries = async () => {
+    try {
+      const data = (await getAllCountries()).data
+      setCountries(data)
+    } catch (err) {
+      // TODO: notify user
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    loadCountries()
+  }, [])
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <TopNav />
+
+      <ul>
+        {countries.map((country, i) => <li key={i}>{country.name.common}</li>)}
+      </ul>
     </div>
   )
 }
