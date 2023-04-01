@@ -1,0 +1,15 @@
+.CountryCard {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+    width: 260px;
+}
+
+.CountryCard .details {
+    padding: 2rem;
+}
+
+.CountryCard .logo {
+    width: 260px;
+    height: 160px;
+}

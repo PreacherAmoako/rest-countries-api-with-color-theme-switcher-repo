@@ -1,36 +1,21 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { getAllCountries } from './services'
-import { Country } from './country'
 import TopNav from './components/TopNav'
+import { RouterProvider } from "react-router-dom";
+import { router } from './routes'
+import { CountriesContext } from './store';
+import { useState } from 'react';
+import { Country } from './country';
 
 function App() {
-  const [countries, setCountries] = useState<Country[]>([])
-
-  const loadCountries = async () => {
-    try {
-      const data = (await getAllCountries()).data
-      setCountries(data)
-    } catch (err) {
-      // TODO: notify user
-      console.log(err)
-    }
-  }
-
-  useEffect(() => {
-    loadCountries()
-  }, [])
+  const [countries, setCountries] = useState<Country[]>([]);
 
   return (
-    <div className="App">
-      <TopNav />
-
-      <ul>
-        {countries.map((country, i) => <li key={i}>{country.name.common}</li>)}
-      </ul>
-    </div>
+    <CountriesContext.Provider value={{ countries, setCountries }}>
+      <div className="App">
+        <TopNav />
+        <RouterProvider router={router} />
+      </div>
+    </CountriesContext.Provider>
   )
 }
 

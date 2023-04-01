@@ -2,6 +2,11 @@ import './TopNav.css'
 
 export default function TopNav() {
     return <div className="TopNav">
-        I am the top nav
+        <div className='TopNavLeft'>
+            Where in the world?
+        </div>
+        <div className='TopNavRight'>
+            Dark Mode
+        </div>
     </div>
 }
