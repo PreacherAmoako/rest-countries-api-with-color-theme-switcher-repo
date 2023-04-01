@@ -13,3 +13,7 @@
     width: 260px;
     height: 160px;
 }
+
+.App.dark-mode .CountryCard * {
+    background-color: #2B3844 !important;
+}
