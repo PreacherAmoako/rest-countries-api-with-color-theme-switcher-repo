@@ -1,19 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+body {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+}
+
 .CountryCard {
     display: flex;
     flex-flow: column nowrap;
     background-color: white;
     width: 260px;
+    border-radius: 5px;
+    box-shadow: 2rem;
+    margin-left: 3rem;
 }
 
 .CountryCard .details {
     padding: 2rem;
+    font-weight: 300;
 }
 
 .CountryCard .logo {
     width: 260px;
     height: 160px;
+    border-radius: 7px 7px 0px 0px  ;
+
 }
 
 .App.dark-mode .CountryCard * {
     background-color: #2B3844 !important;
+}
+
+.CountryCard .title{
+    height: 15px;
+    margin-top: -10px;
 }

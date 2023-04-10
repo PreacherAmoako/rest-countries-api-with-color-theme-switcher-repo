@@ -16,17 +16,17 @@ export default function CountryDetails() {
     return (
         <div className="CountryDetails">
             <div className="row">
-                <span><Link to='/'>Back</Link></span>
+                <span><Link to='/'><img src="src\assets\back-arrow-white.svg" alt="Back icon light" />Back</Link></span>
             </div>
             <div className="row">
                 <img src={country?.flags.png} alt={country?.flags.alt} />
                 <div className="details">
                     <h3>{country?.name.common}</h3>
                     <div className="info-box">
-                        <span><em>Native Name:</em> {country?.name.official}</span>
-                        <span><em>Top Level Domain:</em> {country?.tld.join(', ')}</span>
-                        <span><em>Population:</em> {country?.population}</span>
-                        <span><em>Currencies:</em> {Object.values(country?.currencies ?? {}).map(cur => cur.name).join(', ')}</span>
+                        <span><em>Native Name: </em> {country?.name.official}</span>
+                        <span><em>Top Level Domain: </em> {country?.tld.join(', ')}</span>
+                        <span><em>Population: </em> {country?.population}</span>
+                        <span><em>Currencies: </em> {Object.values(country?.currencies ?? {}).map(cur => cur.name).join(', ')}</span>
                     </div>
                     <span>
                         <em>Border Countries: </em>
