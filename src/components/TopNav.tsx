@@ -11,8 +11,8 @@ export default function TopNav(props: TopNavProps) {
             Where in the world?
         </div>
         <div className='TopNavRight' onClick={() => props.onThemeToggle()}>
-            {props.currentTheme === 'dark-mode' && <img src="src\assets\moon-dark.svg" alt="Dark mode icon" />}
-            {props.currentTheme === 'light-mode' && <img src="src\assets\moon-white.svg" alt="Light mode icon" />}
+            {props.currentTheme === 'dark-mode' && <img src="\assets\moon-dark.svg" alt="Dark mode icon" />}
+            {props.currentTheme === 'light-mode' && <img src="\assets\moon-white.svg" alt="Light mode icon" />}
            <span style={{} }>Dark Mode</span> 
         </div>
     </div>
