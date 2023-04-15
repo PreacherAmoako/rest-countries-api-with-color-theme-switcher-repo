@@ -1,10 +1,10 @@
-import { createContext, Dispatch, SetStateAction, useState } from "react";
+import { createContext, Dispatch, FC, ReactNode, SetStateAction, useState } from "react";
 import { Country } from "./country";
 
 
 const CountriesContext = createContext({ countries: [] as Country[], setCountries: (() => { }) as Dispatch<SetStateAction<Country[]>> });
 
-const CountriesProvider = ({ children }) => {
+const CountriesProvider : FC<{children:ReactNode}>= ({ children }) => {
   const [countries, setCountries] = useState<Country[]>([]);
 
   return (
