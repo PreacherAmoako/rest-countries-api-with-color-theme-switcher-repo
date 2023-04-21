@@ -20,7 +20,8 @@ export interface Country {
     };
     borders: string[];
     capital: string[];
-    langiages: {
+    languages: {
         [key: string]: string
     };
+    cca3: string;
 }

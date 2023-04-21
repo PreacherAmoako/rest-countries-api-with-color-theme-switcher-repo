@@ -20,19 +20,19 @@ export default function AllCountries() {
     return [...new Set(countries.map(country => country.region))]
   }, [countries]);
 
-  const loadCountries = useCallback(async () => {
-    try {
-      const data = (await getAllCountries()).data
-      setCountries(data)
-    } catch (err) {
-      // TODO: notify user
-      console.log(err)
-    }
-  }, [setCountries])
+  // const loadCountries = useCallback(async () => {
+  //   try {
+  //     const data = (await getAllCountries()).data
+  //     setCountries(data)
+  //   } catch (err) {
+  //     // TODO: notify user
+  //     console.log(err)
+  //   }
+  // }, [setCountries])
 
-  useEffect(() => {
-    loadCountries()
-  }, [loadCountries])
+  // useEffect(() => {
+  //   loadCountries()
+  // }, [loadCountries])
 
   return (
     <div className="AllCountries">
